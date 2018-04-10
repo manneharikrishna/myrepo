@@ -1,0 +1,25 @@
+---
+- hosts: "{{ serv }}"
+  gather_facts: True
+  remote_user: "{{ user }}"
+  become: true
+  become_method: sudo
+  become_user: root
+    
+  tasks:
+  - name: Deleting users
+    user: name={{ item.name }} 
+    with_items: 
+      - { name: 'testuser1' }
+      - { name: 'testuser2' }
+      - { name: 'baso' }
+      - { name:  'subh' }
+      - { name:  'ansible' }
+      - { name : 'world' }
+      - { name : 'ram' }
+      - { name : 'rahim' }
+      - { name : 'Hari' }
+      - { name : 'rahul' }
+      - { name : 'rashmi' }
+      - { name : 'ramesh' }
+      - { name : 'vagrant' }
